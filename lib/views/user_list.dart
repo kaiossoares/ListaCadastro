@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lista_cadastro/components/user_tile.dart';
 import 'package:lista_cadastro/provider/users.dart';
 import 'package:lista_cadastro/models/user.dart';
+import 'package:lista_cadastro/routes/app_routes.dart';
 import 'package:provider/provider.dart';
 
 class UserList extends StatelessWidget {
@@ -18,11 +19,9 @@ class UserList extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
-              users.put(User(
-                name: 'Teste',
-                email: 'aluno@cod3r.com.br',
-                avatarUrl: ''
-              ));
+              Navigator.of(context).pushNamed(
+                AppRoutes.USER_FORM
+              );
             },
           )
         ],
